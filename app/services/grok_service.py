@@ -21,7 +21,7 @@ class GrokExamService:
             return
 
         try:
-            self.client = Groq(api_key=GROQ_API_KEY)
+            self.client = Groq(api_key=GROQ_API_KEY, proxies=None)
             self.model = "llama-3.1-8b-instant"
             masked = GROQ_API_KEY[:4] + "..." + GROQ_API_KEY[-4:]
             print(f"✅ GROQ API Loaded: {masked}")
