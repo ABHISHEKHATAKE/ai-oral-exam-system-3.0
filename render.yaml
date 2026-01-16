@@ -1,0 +1,21 @@
+# Render Deployment Configuration for Backend
+
+# render.yaml for Render.com deployment
+services:
+  - type: web
+    name: exam-backend
+    runtime: python3
+    buildCommand: pip install -r exam_system/requirements.txt
+    startCommand: cd exam_system && python main.py
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: MONGODB_URL
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 30</content>
+<parameter name="filePath">d:\Assigment(2) - Copy\render.yaml
